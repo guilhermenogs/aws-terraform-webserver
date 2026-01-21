@@ -36,8 +36,8 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_instance" "web_server" {
   ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro" 
-  
+  instance_type = "t3.micro"
+
   # Conecta o Security Group que criamos acima
   vpc_security_group_ids = [aws_security_group.sg_web.id]
 
@@ -67,7 +67,7 @@ check "health_check" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-guilherme-nogueira-leite" 
+  bucket        = "terraform-guilherme-nogueira-leite"
   force_destroy = true
 
   tags = {

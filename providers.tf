@@ -7,7 +7,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "terraform-guilherme-nogueira-leite" 
+    bucket         = "terraform-guilherme-nogueira-leite"
     key            = "webserver/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-locks"
